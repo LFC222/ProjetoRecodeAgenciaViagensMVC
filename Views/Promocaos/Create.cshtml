@@ -1,0 +1,43 @@
+﻿@model RecodeMvc.Models.Promocao
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar</h1>
+
+<h4>Promocao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Destino_Promo" class="control-label"></label>
+                <input asp-for="Destino_Promo" class="form-control" />
+                <span asp-validation-for="Destino_Promo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor_promo" class="control-label"></label>
+                <input asp-for="Valor_promo" class="form-control" />
+                <span asp-validation-for="Valor_promo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qntd_Dias" class="control-label"></label>
+                <input asp-for="Qntd_Dias" class="form-control" />
+                <span asp-validation-for="Qntd_Dias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

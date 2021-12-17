@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RecodeMvc.Models.Promocao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro Promoções</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Destino_Promo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor_promo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qntd_Dias)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino_Promo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor_promo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qntd_Dias)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Promo">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Promo">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Promo">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<RecodeMvc.Models.Destino>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro Destino</h1>
+
+<p>
+    <a asp-action="Create">Criar Novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDestino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataIda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVolta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDestino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataIda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVolta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Destino">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Destino">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Destino">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
